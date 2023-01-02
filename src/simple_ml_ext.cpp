@@ -5,6 +5,24 @@
 
 namespace py = pybind11;
 
+/*
+def softmax_regression_epoch(X, y, theta, lr = 0.1, batch=100):
+    def normalize(cur):
+        def calCuri(curi): 
+            return np.exp(curi)/np.sum(np.exp(cur))
+        return [*map(calCuri,cur)]
+    for index in range(0,len(y),batch):
+        batchX,batchy=X[index:index+batch],y[index:index+batch]
+        Z=np.array([*map(normalize,np.dot(batchX,theta))])
+        newy=np.array([np.concatenate((x[0:yy],np.array([1]),x[yy+1:]), axis=0) 
+          for (x,yy) in zip(np.zeros(shape=(batchy.shape[0],theta[0].shape[0])),batchy)
+         ])
+        theta-=(lr/batch)*np.dot(batchX.transpose(),(Z-newy))
+
+def softmax_loss(Z, y):
+    return np.average([*map(lambda idx:np.log(np.sum(np.exp(Z[idx])))-Z[idx][y[idx]],[x for x in range(len(y))])])
+    
+*/
 
 void softmax_regression_epoch_cpp(const float *X, const unsigned char *y,
 								  float *theta, size_t m, size_t n, size_t k,
@@ -32,8 +50,10 @@ void softmax_regression_epoch_cpp(const float *X, const unsigned char *y,
      *     (None)
      */
 
+    
+    
     /// BEGIN YOUR CODE
-
+    //theta[0]=9999.999;
     /// END YOUR CODE
 }
 
